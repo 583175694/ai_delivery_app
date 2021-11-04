@@ -2,6 +2,7 @@ import 'package:AI_delivery_app/pages/delivery_page.dart';
 import 'package:AI_delivery_app/pages/home_page.dart';
 import 'package:AI_delivery_app/pages/mine_page.dart';
 import 'package:AI_delivery_app/pages/notify_page.dart';
+import 'package:AI_delivery_app/plugins/screen_fit.dart';
 import 'package:flutter/material.dart';
 
 class RoutePage extends StatefulWidget {
@@ -49,6 +50,9 @@ class _RoutePageState extends State<RoutePage> {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.instance = ScreenUtil(width: 750, height: 1624)
+      ..init(context);
+
     return Scaffold(
       body: containerList[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(

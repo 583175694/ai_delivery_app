@@ -34,8 +34,9 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('首页'),
+        title: Text('首页', style: TextStyle(color: Color.fromRGBO(0, 0, 0, 1))),
         elevation: 0,
+        backgroundColor: Colors.white,
       ),
       body: ListView(
         children: [
