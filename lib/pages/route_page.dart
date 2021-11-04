@@ -27,41 +27,20 @@ class _RoutePageState extends State<RoutePage> {
   ];
 
   List nav = [
-    {
-      'index': 0,
-      'title': 'F1',
-      'icon': Icons.home,
-      'activeIcon': Icons.home,
-    },
-    {
-      'index': 1,
-      'title': 'F2',
-      'icon': Icons.book,
-      'activeIcon': Icons.book,
-    },
-    {
-      'index': 2,
-      'title': 'F3',
-      'icon': Icons.school,
-      'activeIcon': Icons.school,
-    },
-    {
-      'index': 3,
-      'title': 'F2',
-      'icon': Icons.perm_camera_mic,
-      'activeIcon': Icons.perm_camera_mic,
-    }
+    new Nav(0, 'F1', Icons.home, Icons.home),
+    new Nav(1, 'F2', Icons.book, Icons.book),
+    new Nav(2, 'F3', Icons.school, Icons.school),
+    new Nav(3, 'F4', Icons.perm_camera_mic, Icons.perm_camera_mic)
   ];
 
   List<BottomNavigationBarItem> buildGrid() {
     List<BottomNavigationBarItem> tiles = [];
-    for (var item in nav) {
-      print(item);
+    for (Nav item in nav) {
       tiles.add(
           BottomNavigationBarItem(
-            title: Text(item['title'], style: TextStyle(color: selectedIndex == item['index'] ? Colors.red : Colors.grey),),
-            icon: Icon(item['icon'], color: Colors.grey),
-            activeIcon: Icon(item['activeIcon'], color: Colors.red),
+            title: Text(item.title, style: TextStyle(color: selectedIndex == item.index ? Colors.red : Colors.grey),),
+            icon: Icon(item.icon, color: Colors.grey),
+            activeIcon: Icon(item.activeIcon, color: Colors.red),
           )
       );
     }
@@ -84,4 +63,13 @@ class _RoutePageState extends State<RoutePage> {
       ),
     );
   }
+}
+
+class Nav {
+  int index;
+  String title;
+  IconData icon;
+  IconData activeIcon;
+
+  Nav(this.index, this.title, this.icon, this.activeIcon);
 }
