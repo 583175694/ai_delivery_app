@@ -28,11 +28,11 @@ class _RoutePageState extends State<RoutePage> {
     )
   ];
 
-  List nav = [
-    new Nav(0, 'F1', Icons.home, Icons.home),
-    new Nav(1, 'F2', Icons.book, Icons.book),
-    new Nav(2, 'F3', Icons.school, Icons.school),
-    new Nav(3, 'F4', Icons.perm_camera_mic, Icons.perm_camera_mic)
+  List<Nav> nav = [
+    new Nav(0, '首页', 'lib/assets/icons/icon_home_unchecked.png', 'lib/assets/icons/icon_home_selected.png'),
+    new Nav(1, '精准投', 'lib/assets/icons/icon_precision_casting_unchecked.png', 'lib/assets/icons/icon_precision_investment_selected.png'),
+    new Nav(2, '通知', 'lib/assets/icons/icon_notification_unchecked.png', 'lib/assets/icons/icon_notification_selected.png'),
+    new Nav(3, '我的', 'lib/assets/icons/icon_my_unchecked.png', 'lib/assets/icons/icon_my_selected.png')
   ];
 
   List<BottomNavigationBarItem> routeList() {
@@ -41,8 +41,12 @@ class _RoutePageState extends State<RoutePage> {
       tiles.add(
           BottomNavigationBarItem(
             title: Text(item.title, style: TextStyle(color: selectedIndex == item.index ? Colors.red : Colors.grey),),
-            icon: Icon(item.icon, color: Colors.grey),
-            activeIcon: Icon(item.activeIcon, color: Colors.red),
+            icon: Container(
+              child: Image.asset(item.icon, width: ScreenUtil().setWidth(50), height: ScreenUtil().setWidth(50)),
+            ),
+            activeIcon: Container(
+              child: Image.asset(item.activeIcon, width: ScreenUtil().setWidth(50), height: ScreenUtil().setWidth(50)),
+            ),
           )
       );
     }

@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 class Nav {
   int index;
   String title;
-  IconData icon;
-  IconData activeIcon;
+  String icon;
+  String activeIcon;
 
   Nav(this.index, this.title, this.icon, this.activeIcon);
 }
