@@ -1,3 +1,4 @@
+import 'package:AI_delivery_app/model/route_model.dart';
 import 'package:AI_delivery_app/pages/delivery_page.dart';
 import 'package:AI_delivery_app/pages/home_page.dart';
 import 'package:AI_delivery_app/pages/mine_page.dart';
@@ -34,7 +35,7 @@ class _RoutePageState extends State<RoutePage> {
     new Nav(3, 'F4', Icons.perm_camera_mic, Icons.perm_camera_mic)
   ];
 
-  List<BottomNavigationBarItem> buildGrid() {
+  List<BottomNavigationBarItem> routeList() {
     List<BottomNavigationBarItem> tiles = [];
     for (Nav item in nav) {
       tiles.add(
@@ -63,17 +64,8 @@ class _RoutePageState extends State<RoutePage> {
             selectedIndex = index;
           });
         },
-        items: buildGrid()
+        items: routeList()
       ),
     );
   }
-}
-
-class Nav {
-  int index;
-  String title;
-  IconData icon;
-  IconData activeIcon;
-
-  Nav(this.index, this.title, this.icon, this.activeIcon);
 }
