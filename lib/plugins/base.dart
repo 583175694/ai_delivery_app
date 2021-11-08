@@ -15,5 +15,5 @@ abstract class Base {
   static final double designHeight = 1624;
 
   // flutter_ScreenUtil px转dp
-  num dp(double designValue) => ScreenUtil.getInstance().setWidth(designValue);
+  double dp(double designValue) => ScreenUtil.getInstance().setWidth(designValue);
 }

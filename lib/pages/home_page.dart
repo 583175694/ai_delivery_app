@@ -4,6 +4,7 @@
  * @Date 2021-11-3
  **/
 import 'package:AI_delivery_app/entity/dog.dart';
+import 'package:AI_delivery_app/plugins/base.dart';
 import 'package:AI_delivery_app/plugins/http.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,7 @@ class HomePage extends StatefulWidget {
   HomePageState createState() => HomePageState();
 }
 
-class HomePageState extends State<HomePage> {
+class HomePageState extends State<HomePage> with Base {
   Dog? dogRes;
   @override
   void initState() {
