@@ -3,6 +3,7 @@
  * @Author wushaohang
  * @Date 2021-11-3
  **/
+import 'package:AI_delivery_app/components/donut_pie_chart.dart';
 import 'package:AI_delivery_app/entity/dog.dart';
 import 'package:AI_delivery_app/plugins/base.dart';
 import 'package:AI_delivery_app/plugins/http.dart';
@@ -41,9 +42,25 @@ class HomePageState extends State<HomePage> with Base {
         elevation: 0,
         backgroundColor: Colors.white,
       ),
+      backgroundColor: Color(0xffF6F6F8),
       body: ListView(
-        children: [
-          dogRes == null ? Container() : Image.network(dogRes!.message),
+        children: <Widget>[
+          Container(
+            width: dp(710),
+            height: dp(535),
+            margin: EdgeInsets.only(left: dp(20), right: dp(20), top: dp(24)),
+            child: Center(
+              child: Container(
+                width: dp(400),
+                height: dp(400),
+                child: DonutPieChart.withSampleData(),
+              ),
+            ),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(dp(20))
+            ),
+          ),
         ],
       ),
     );
