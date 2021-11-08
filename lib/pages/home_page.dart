@@ -21,13 +21,15 @@ class HomePageState extends State<HomePage> {
     requestDog();
   }
 
-  Future<Dog> requestDog() async {
+  void requestDog() async {
+    print(dogRes);
     var response = await HttpUtils.request(
         '/breeds/image/random',
         method: HttpUtils.GET
     );
-    Dog dogRes = Dog.fromJson(response);
-    return dogRes;
+    setState(() {
+      dogRes = Dog.fromJson(response);
+    });
   }
 
   @override
@@ -40,7 +42,7 @@ class HomePageState extends State<HomePage> {
       ),
       body: ListView(
         children: [
-          dogRes == null ? Container() : Image.network(dogRes!.message)
+          dogRes == null ? Container() : Image.network(dogRes!.message),
         ],
       ),
     );
